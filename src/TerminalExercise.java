@@ -14,18 +14,21 @@ public class TerminalExercise {
 
             input = scanner.next();
 
-            if (input.equals("1")) {
-                calc.run();
-            } else if (input.equals("2")) {
-                String character = "";
-                for (int i = 0; i <= 5; i++) {
-                    character += "#";
-                    System.out.println(character);
-                }
-                System.out.println("NASA hackeada exitosamente.");
-            } else if (input.equals("3")) {
-                System.out.println("Ha salido exitosamente");
-                break terminal;
+            switch (input) {
+                case "1":
+                    calc.run();
+                    break;
+                case "2":
+                    String character = "";
+                    for (int i = 0; i <= 5; i++) {
+                        character += "#";
+                        System.out.println(character);
+                    }
+                    System.out.println("NASA hackeada exitosamente.");
+                    break;
+                case "3":
+                    System.out.println("Ha salido exitosamente");
+                    break terminal;
             }
 
         }
