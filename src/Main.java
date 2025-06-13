@@ -8,27 +8,34 @@ public class Main {
         String input = "";
 
         terminal: while (!input.equalsIgnoreCase("salir")) {
-            System.out.println("Seleccione una opción:");
-            System.out.println("1. Calculadora");
-            System.out.println("2. Hackear NASA");
-            System.out.println("3. Salir.");
+            messages();
 
             input = scanner.next();
 
-            if (input.equals("1")) {
-                calc.run();
-            } else if (input.equals("2")) {
-                String character = "";
-                for (int i = 0; i <= 5; i++) {
-                    character += "#";
-                    System.out.println(character);
-                }
-                System.out.println("NASA hackeada exitosamente.");
-            } else if (input.equals("3")) {
-                System.out.println("Ha salido exitosamente");
-                break terminal;
+            switch (input) {
+                case "1":
+                    calc.run();
+                    break;
+                case "2":
+                    String character = "";
+                    for (int i = 0; i <= 5; i++) {
+                        character += "#";
+                        System.out.println(character);
+                    }
+                    System.out.println("NASA hackeada exitosamente.");
+                    break;
+                case "3":
+                    System.out.println("Ha salido exitosamente");
+                    break terminal;
             }
 
         }
+    }
+
+    public static void messages () {
+        System.out.println("Seleccione una opción:");
+        System.out.println("1. Calculadora");
+        System.out.println("2. Hackear NASA");
+        System.out.println("3. Salir.");
     }
 }
